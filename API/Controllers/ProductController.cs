@@ -28,5 +28,16 @@ namespace API.Controllers
         {
             return await _repository.GetProductByIdAsync(id);
         }
+
+        [HttpGet("brand")]
+        public async Task<IReadOnlyList<ProductBrand>> GetAllBrands()
+        {
+            return await _repository.GetProductBrands();
+        }
+
+        [HttpGet("types")]
+        public async Task<IReadOnlyList<ProductType>> GetAllTypes(){
+            return await _repository.GetProductTypes();
+        }
     }
 }
